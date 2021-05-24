@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+      {% load static %}
+      {% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="{% static 'css/prodDetail.css' %}" type="text/css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+
+      {% endblock css %}
+{% block body %}
+
+<div class="container">
+
+    <main class="container">
+
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column img-responsive">
+      <img src="..." class="img-fluid" alt="...">
+        <img data-image="black" src="/media/{{product.img}}" alt="">
+        <img data-image="blue" src="/media/{{product.img}}" alt="">
+        <img data-image="red"  width = "100%" class="active img-fluid" src="/media/{{product.img}}" alt="Loading">
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>{{product.name}}</span>
+          <h1>{{product.company}}</h1>
+          <p>{{product.desc}}</p>
+        </div>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+
+          <!-- Product Color -->
+          <div class="product-color">
+            <span>Color</span>
+
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Cable Configuration -->
+          <div class="cable-config">
+            <span>Cable configuration</span>
+
+            <div class="cable-choose">
+              <button>Straight</button>
+              <button>Coiled</button>
+              <button>Long-coiled</button>
+            </div>
+
+            <a href="">How to configurate your headphones</a>
+          </div>
+        </div>
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span>₹ {{product.price}}</span>
+          <a href="/cart " class="cart-btn">Add to cart</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="{% static 'js/prodDetail.js' %}" charset="utf-8"></script>
+
+
+
+
+{% endblock body %}
+
